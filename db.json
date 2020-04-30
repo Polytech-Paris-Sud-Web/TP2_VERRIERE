@@ -1,0 +1,22 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "My First Article",
+      "content": "Hello World",
+      "authors": "Orangefire"
+    },
+    {
+      "id": 2,
+      "title": "Angular component",
+      "content": "Angular component looks awesome!",
+      "authors": "Orangefire"
+    },
+    {
+      "title": "Fake Title",
+      "content": "qsq",
+      "authors": "qs",
+      "id": 3
+    }
+  ]
+}
