@@ -4,19 +4,25 @@
       "id": 1,
       "title": "My First Article",
       "content": "Hello World",
-      "authors": "Orangefire"
+      "authors": "Dorian Verriere"
     },
     {
       "id": 2,
       "title": "Angular component",
       "content": "Angular component looks awesome!",
-      "authors": "Orangefire"
+      "authors": "Dorian Verriere"
     },
     {
-      "title": "Fake Title",
-      "content": "qsq",
-      "authors": "qs",
-      "id": 3
+      "title": "Fake Article 1",
+      "content": "aaa",
+      "authors": "Dorian Verriere",
+      "id": 5
+    },
+    {
+      "title": "Fake Article 2",
+      "content": "ccc",
+      "authors": "Dorian Verriere",
+      "id": 6
     }
   ]
 }
