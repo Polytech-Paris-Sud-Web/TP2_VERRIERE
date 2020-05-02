@@ -14,26 +14,26 @@ export class ArticleService {
   constructor(private http : HttpClient) {}
 
   public getArticles(): Observable<Article[]> {
-    return this.http.get<Article[]>(this.url_local);
-    // return this.http.get<Article[]>(this.url_online);
+    // return this.http.get<Article[]>(this.url_local);
+    return this.http.get<Article[]>(this.url_online);
     // return this.http.get<Article[]>(this.url_pc);
   }
 
   public getArticle(id:number): Observable<Article> {
-    return this.http.get<Article>(this.url_local+`${id}`);
-    // return this.http.get<Article>(this.url_online+`${id}`);
+    // return this.http.get<Article>(this.url_local+`${id}`);
+    return this.http.get<Article>(this.url_online+`${id}`);
     // return this.http.get<Article>(this.url_pc+`${id}`);
   }
 
   public deleteArticle(id:number): Observable<void> {
-    return this.http.delete<void>(this.url_local+`${id}`);
-    // return this.http.delete<void>(this.url_online+`${id}`);
+    // return this.http.delete<void>(this.url_local+`${id}`);
+    return this.http.delete<void>(this.url_online+`${id}`);
     // return this.http.delete<void>(this.url_pc+`${id}`);
   }
 
   public addArticle(article : RawArticle): Observable<Article> {
-    return this.http.post<Article>(this.url_local, article);
-    // return this.http.post<Article>(this.url_online, article);
+    // return this.http.post<Article>(this.url_local, article);
+    return this.http.post<Article>(this.url_online, article);
     // return this.http.post<Article>(this.url_pc, article);
   }
 
