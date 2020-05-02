@@ -7,24 +7,34 @@ import { RawArticle } from '../models/rawArticle';
 @Injectable()
 export class ArticleService {
 
+  url_local  = "http://localhost:3000/articles/"; //permission denied 127.0.0.1:3000 (pc pro)
+  url_pc     = "http://192.168.0.20:8080/articles/"; 
+  url_online = "https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2_VERRIERE/articles/";
+
   constructor(private http : HttpClient) {}
 
   public getArticles(): Observable<Article[]> {
-    // return this.http.get<Article[]>("http://localhost:8080/articles"); 
-    // Mon pc d'entreprise refuse la connexion sur le localhost ...
-    return this.http.get<Article[]>("http://192.168.0.20:8080/articles");
+    // return this.http.get<Article[]>(this.url_local);
+    // return this.http.get<Article[]>(this.url_online);
+    return this.http.get<Article[]>(this.url_pc);
   }
 
   public getArticle(id:number): Observable<Article> {
-    return this.http.get<Article>(`http://192.168.0.20:8080/articles/${id}`);
+    // return this.http.get<Article>(this.url_local+`${id}`);
+    // return this.http.get<Article>(this.url_online+`${id}`);
+    return this.http.get<Article>(this.url_pc+`${id}`);
   }
 
   public deleteArticle(id:number): Observable<void> {
-    return this.http.delete<void>(`http://192.168.0.20:8080/articles/${id}`);
+    // return this.http.delete<void>(this.url_local+`${id}`);
+    // return this.http.delete<void>(this.url_online+`${id}`);
+    return this.http.delete<void>(this.url_pc+`${id}`);
   }
 
   public addArticle(article : RawArticle): Observable<Article> {
-    return this.http.post<Article>("http://192.168.0.20:8080/articles/", article);
+    // return this.http.post<Article>(this.url_local, article);
+    // return this.http.post<Article>(this.url_online, article);
+    return this.http.post<Article>(this.url_pc, article);
   }
 
 }

@@ -1,6 +1,16 @@
 
-<app-article-creation (createdArticle)="createdArticle($event)"></app-article-creation>
+<!-- <app-article-creation (createdArticle)="createdArticle($event)"></app-article-creation> -->
+
+<div style="margin: 20px;">
+    <h3>Search for an article</h3>
+    <input type="text" class="searchInp" style="border-color: chartreuse;" (keyup)="search()" id="searchTitle"   placeholder="Title">
+    <input type="text" class="searchInp" style="border-color: orangered;" (keyup)="search()" id="searchContent" placeholder="Content">
+    <input type="text" class="searchInp" style="border-color: cyan;" (keyup)="search()" id="searchAuthors" placeholder="Authors">
+    <span id="searchResult" style="margin-left: 20px;"> {{this._nbResults}} Results founded</span>
+</div>
+
 <hr/>
+
 <div *ngFor="let article of this.articles()">
     <app-article  [article]="article" (deletedArticle)="delete($event)"></app-article>
 </div>

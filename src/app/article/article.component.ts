@@ -14,18 +14,24 @@ export class ArticleComponent implements OnInit {
 
   @Output() deletedArticle : EventEmitter<Article> = new EventEmitter();
 
+  isLoaded: boolean = false;
+
   constructor(private route: ActivatedRoute, private articleService : ArticleService) {}
 
   ngOnInit() {
     this.route.params.subscribe( params => {
       if (params && params['id']){
-        this.articleService.getArticle(params['id']).subscribe(fetchedArticle => this.article = fetchedArticle);
+        this.articleService.getArticle(params['id']).subscribe(fetchedArticle => {
+          this.article = fetchedArticle;
+          this.isLoaded = true;
+        });
+      }else {
+        this.isLoaded = true;
       }
     });
   }
 
   delete(){
-    console.log("delete", this.article)
     this.deletedArticle.emit(this.article);
   }
 

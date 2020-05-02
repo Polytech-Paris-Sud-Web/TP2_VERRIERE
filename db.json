@@ -14,15 +14,21 @@
     },
     {
       "title": "Fake Article 1",
-      "content": "aaa",
-      "authors": "Dorian Verriere",
-      "id": 5
+      "content": "The content",
+      "authors": "Dorian V",
+      "id": 3
     },
     {
       "title": "Fake Article 2",
-      "content": "ccc",
-      "authors": "Dorian Verriere",
-      "id": 6
+      "content": "Fake content",
+      "authors": "Dorian V",
+      "id": 4
+    },
+    {
+      "title": "Fake Article 3",
+      "content": "Push",
+      "authors": "Dorian V",
+      "id": 5
     }
   ]
 }
